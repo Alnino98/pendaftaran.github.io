@@ -1,0 +1,67 @@
+﻿@model IEnumerable<registerweb2.Daftar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Data Pendaftar</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.instansi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ttl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.no_hp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.nama)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.instansi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ttl)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nik)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.no_hp)
+    </td>
+    <td>
+        <a href="@Url.Action("Edit", "Daftar", new { id = item.Id })">
+            <i class="fa fa-edit btn btn-info btn-sm"></i>
+        </a> |
+        <a href="@Url.Action("Detail", "Daftar", new { id = item.Id })">
+            <i class="btn btn-warning btn-sm">Details</i>
+        </a> |
+        <a href="@Url.Action("Delete", "Daftar", new { id = item.Id })">
+            <i class="btn btn-danger btn-sm">Delete</i>
+        </a>
+    </td>
+</tr>
+}
+
+</table>

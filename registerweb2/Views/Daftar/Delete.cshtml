@@ -1,0 +1,73 @@
+﻿@model registerweb2.Daftar
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Daftar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.instansi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.instansi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ttl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ttl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.no_hp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.no_hp)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
